@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: TEAM-SERVICE
+
+server:
+  port: 8082
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+       enabled: true
