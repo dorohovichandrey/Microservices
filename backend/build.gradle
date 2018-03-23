@@ -11,6 +11,8 @@ buildscript {
     }
 }
 
+
+
 subprojects {
 
     apply plugin: 'java'
@@ -24,5 +26,18 @@ subprojects {
     repositories {
         mavenCentral()
     }
+
+    jar {
+        archiveName = project.name + ".jar"
+    }
+
+    task buildDockerImage(dependsOn: build) {
+        doLast {
+            exec {
+                commandLine 'docker', 'build', '--force-rm=true', "--tag=${project.name}", '.'
+            }
+        }
+    }
+
 
 }
