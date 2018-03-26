@@ -1,4 +1,4 @@
-####Docker
+###Docker
 
 * Build image from Dockerfile  
   
@@ -9,7 +9,7 @@
 * List of all containers  
   
   `docker ps -a`
-* Remove all containers and its anonymous volumes  
+* Remove all exited containers and their anonymous volumes  
   
   `docker rm -v $(docker ps -a -q)`
 
@@ -18,3 +18,11 @@
   `docker rmi $(docker images -f "dangling=true" -q)`  
     
   `docker system prune`
+
+* Run container from image ( -d -> detached mode, -p -> ports)  
+  
+  `docker run \<image_name>`  
+    
+* Deploy system
+  
+  `docker-compose up` (execute this command in directory with docker-compose.yml)

@@ -1,6 +1,8 @@
 spring:
   application:
     name: FOOTBALLER-SERVICE
+  profiles:
+    active: docker
 
 server:
   port: 8081
@@ -9,12 +11,4 @@ management:
   security:
     enabled: false
 
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-    healthcheck:
-       enabled: true
 

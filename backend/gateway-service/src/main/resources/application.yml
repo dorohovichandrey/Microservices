@@ -1,3 +1,9 @@
+spring:
+  application:
+    name: GATEWAY-SERVICE
+  profiles:
+    active: docker
+
 hystrix:
   command:
     default:
@@ -23,4 +29,8 @@ zuul:
     footbaler-service-route:
       path: /footballer/**
       serviceId: FOOTBALLER-SERVICE
+      stripPrefix: false
+    team-service-route:
+      path: /team/**
+      serviceId: TEAM-SERVICE
       stripPrefix: false

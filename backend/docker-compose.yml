@@ -1,20 +1,57 @@
 version: "3"
 
 services:
+
   registry-service:
-    # replace username/repo:tag with your name and image details
     image: registry-service
     deploy:
-      replicas: 5
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
+      replicas: 1
       restart_policy:
         condition: on-failure
     ports:
-      - "80:80"
+      - "8761:8761"
     networks:
       - webnet
+
+  gateway-service:
+    image: gateway-service
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "9090:9090"
+    depends_on:
+      - registry-service
+    networks:
+      - webnet
+
+  footballer-service:
+    image: footballer-service
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8081:8081"
+    depends_on:
+      - registry-service
+    networks:
+      - webnet
+
+  team-service:
+    image: team-service
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8082:8082"
+    depends_on:
+      - registry-service
+    networks:
+      - webnet
+
+
 networks:
   webnet:
