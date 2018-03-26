@@ -1,4 +1,7 @@
-package com.dorohovich.footballer;
+package com.dorohovich.footballer.app;
+
+import com.dorohovich.footballer.app.Footballer;
+import com.dorohovich.footballer.common.FootballerDTO;
 
 public class FootballerDTOConverter {
 

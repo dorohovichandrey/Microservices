@@ -4,4 +4,5 @@ include 'common'
 include 'backend:registry-service'
 include 'backend:gateway-service'
 include 'backend:team-service'
+include 'common:footballer-common'
 

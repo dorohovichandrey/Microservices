@@ -1,4 +1,4 @@
-package com.dorohovich.footballer;
+package com.dorohovich.footballer.app;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class FootballerDTO {
+public class Footballer {
 
     private String id;
     private String name;

@@ -1,5 +1,6 @@
 package com.dorohovich.team;
 
+import com.dorohovich.footballer.common.FootballerDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,6 @@ public class TeamController {
 
     @GetMapping
     public ResponseEntity<String> getTeam(){
-        return ResponseEntity.ok(footballerFeignClient.getList().getBody() + "Cool team!!!");
+        return ResponseEntity.ok(footballerFeignClient.getList() + "Cool team!!!");
     }
 }
