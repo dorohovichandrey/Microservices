@@ -2,7 +2,7 @@ version: "3"
 
 services:
 
-  mongodb:
+  mongodb-local-footballer:
     image: mongo
     deploy:
           replicas: 1
@@ -12,15 +12,15 @@ services:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
     volumes:
-      - "db-data:/data/db"
+      - "footballer-db-data:/data/db"
     ports:
-      - "27017:27017"
+      - "27081:27017"
     networks:
       - webnet
-
 
 networks:
   webnet:
 
 volumes:
-  db-data:
+  footballer-db-data:
+    external: true

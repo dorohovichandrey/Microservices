@@ -13,8 +13,8 @@ public class FootballerDTO {
 
     private String id;
     private String name;
-    private String surname;
-    private Integer age;
-    private Integer skill;
+    private Integer rating;
+    private String position;
+    private String foot;
 
 }

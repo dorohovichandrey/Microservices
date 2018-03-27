@@ -1,3 +1,17 @@
+##System
+
+gateway-service    | port = 9090  |  (Zuul)  
+
+registry-service   | port = 8761  |  (Eureka) 
+
+footballer-service | port = 8081  |  
+
+footballer-db      | port = 27081 |  (MongoDB)  
+
+team-service       | port = 8082  |  
+
+team-db            | port = 27082 |  (MongoDB)`
+
 ###Docker
 
 * Build image from Dockerfile  
@@ -14,7 +28,7 @@
   `docker rm -v $(docker ps -a -q)` - exited containers
   
   `docker stop <id>` - stop container  
-  `docker rm -v $(docker ps)` - remove containers
+  `docker rm -f $(docker ps -a -q)` - remove containers
   
 * Collect garbage (in case of \<none>:\<none> images)  
 
@@ -29,7 +43,3 @@
 * Deploy system
   
   `docker-compose up` (execute this command in directory with docker-compose.yml)
-
-####MongoDB
-
-`docker run -p 27017:27017 mongo`

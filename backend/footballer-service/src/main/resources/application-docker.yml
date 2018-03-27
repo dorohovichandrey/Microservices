@@ -6,3 +6,10 @@ eureka:
       defaultZone: http://registry-service:8761/eureka/
     healthcheck:
        enabled: true
+
+spring:
+  data:
+    mongodb:
+      host: footballer-db
+      port: 27017
+      database: footballer_db

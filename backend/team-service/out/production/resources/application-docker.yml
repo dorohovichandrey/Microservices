@@ -6,3 +6,10 @@ eureka:
       defaultZone: http://registry-service:8761/eureka/
     healthcheck:
        enabled: true
+
+spring:
+  data:
+    mongodb:
+      host: team-db
+      port: 27081
+      database: team_db
