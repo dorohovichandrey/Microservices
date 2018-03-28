@@ -22,12 +22,6 @@ public class FootballerController {
 
     @GetMapping
     public ResponseEntity<List<FootballerDTO>> getList(){
-        /*return ResponseEntity.ok(Arrays.asList(
-                toDTO(new Footballer("1","Wayne", "Rooney", 32, 81)),
-                toDTO(new Footballer("2","Alex", "Hleb", 38, 72)),
-                toDTO(new Footballer("3","Santi", "Cazorla", 33, 80))
-            )
-        );*/
         List<FootballerDTO> footballerDTOList = toDTOList(footballerRepository.findAll());
         return ResponseEntity.ok(footballerDTOList);
     }
@@ -35,7 +29,7 @@ public class FootballerController {
     @PostMapping("/by-ids")
     public ResponseEntity<List<FootballerDTO>> getFootballerListById(@RequestBody List<String> idList){
         List<FootballerDTO> footballerDTOList = toDTOList(
-                footballerRepository.findFootballersByIdIn(idList));
+                footballerRepository.findFootballersByIdInOrderByPosition(idList));
         return ResponseEntity.ok(footballerDTOList);
     }
 }

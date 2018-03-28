@@ -11,5 +11,5 @@ spring:
   data:
     mongodb:
       host: team-db
-      port: 27081
+      port: 27017
       database: team_db

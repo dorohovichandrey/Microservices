@@ -2,7 +2,7 @@ spring:
   application:
     name: TEAM-SERVICE
   profiles:
-    active: local
+    active: docker
 
 server:
   port: 8082
@@ -10,12 +10,3 @@ server:
 management:
   security:
     enabled: false
-
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
-    healthcheck:
-       enabled: true

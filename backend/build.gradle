@@ -1,7 +1,7 @@
 group 'com.dorohovich'
 version '1.0-SNAPSHOT'
 
-allprojects {
+subprojects {
 
     apply plugin: 'idea'
     apply plugin: 'org.springframework.boot'

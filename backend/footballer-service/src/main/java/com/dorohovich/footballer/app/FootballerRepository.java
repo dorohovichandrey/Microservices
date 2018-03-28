@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface FootballerRepository extends MongoRepository<Footballer, String> {
 
-    List<Footballer> findFootballersByIdIn(List<String> idList);
+    List<Footballer> findFootballersByIdInOrderByPosition(List<String> idList);
 }

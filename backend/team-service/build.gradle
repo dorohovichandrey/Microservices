@@ -8,4 +8,5 @@ dependencies{
     compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-feign', version: '1.3.0.RELEASE'
     provided group: 'org.projectlombok', name: 'lombok', version: '1.16.8'
     compile files('../../common/footballer-common/build/libs/footballer-common-1.0-SNAPSHOT.jar')
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb'
 }

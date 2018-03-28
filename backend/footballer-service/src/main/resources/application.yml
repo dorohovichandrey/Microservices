@@ -2,7 +2,7 @@ spring:
   application:
     name: FOOTBALLER-SERVICE
   profiles:
-    active: local
+    active: docker
 
 server:
   port: 8081

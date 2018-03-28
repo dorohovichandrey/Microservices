@@ -43,3 +43,7 @@ team-db            | port = 27082 |  (MongoDB)`
 * Deploy system
   
   `docker-compose up` (execute this command in directory with docker-compose.yml)
+  
+* Up docker container from docker-compose  
+  
+  `docker-compose up <name>`
