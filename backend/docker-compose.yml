@@ -4,10 +4,6 @@ services:
 
   registry-service:
     image: registry-service
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
     ports:
       - "8761:8761"
     networks:
@@ -15,10 +11,6 @@ services:
 
   gateway-service:
     image: gateway-service
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
     ports:
       - "9090:9090"
     depends_on:
@@ -28,25 +20,18 @@ services:
 
   footballer-service:
     image: footballer-service
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
     ports:
-      - "8081:8081"
+      - "8081"
     depends_on:
       - registry-service
+      - footballer-db
     networks:
       - webnet
 
   team-service:
     image: team-service
-    deploy:
-      replicas: 1
-      restart_policy:
-        condition: on-failure
     ports:
-      - "8082:8082"
+      - "8082"
     depends_on:
       - registry-service
       - team-db
@@ -55,10 +40,6 @@ services:
 
   footballer-db:
     image: mongo
-    deploy:
-          replicas: 1
-          restart_policy:
-            condition: on-failure
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
@@ -74,10 +55,6 @@ services:
 
   team-db:
     image: mongo
-    deploy:
-          replicas: 1
-          restart_policy:
-            condition: on-failure
     environment:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null

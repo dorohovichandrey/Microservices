@@ -47,3 +47,8 @@ team-db            | port = 27082 |  (MongoDB)`
 * Up docker container from docker-compose  
   
   `docker-compose up <name>`
+  
+##### Scale 
+
+docker-compose up -d --scale footballer-service=2 --no-recreate
+
