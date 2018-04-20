@@ -52,3 +52,12 @@ team-db            | port = 27082 |  (MongoDB)`
 
 docker-compose up -d --scale footballer-service=2 --no-recreate
 
+###VEGETA
+
+echo "GET http://localhost:8081/footballer" | vegeta -cpus 2 attack -duration=3s | vegeta report
+
+echo "GET http://localhost:8081/footballer" | vegeta -cpus 2 attack -duration=3s -rate=50 | vegeta report -reporter=plot -output=report.html
+
+
+
+

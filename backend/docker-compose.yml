@@ -47,9 +47,6 @@ services:
       - "footballer-db-data:/data/db"
     ports:
       - "27081:27017"
-    depends_on:
-      - registry-service
-      - team-db
     networks:
       - webnet
 
