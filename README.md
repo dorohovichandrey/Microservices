@@ -60,4 +60,5 @@ echo "GET http://localhost:8081/footballer" | vegeta -cpus 2 attack -duration=3s
 
 
 
+docker run --cpus=1 --network=backend_webnet -p 8081 footballer-service
 

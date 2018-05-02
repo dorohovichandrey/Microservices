@@ -26,7 +26,7 @@ zuul:
     connect-timeout-millis: 20000
     socket-timeout-millis: 20000
   routes:
-    footbaler-service-route:
+    footballer-service-route:
       path: /footballer/**
       serviceId: FOOTBALLER-SERVICE
       stripPrefix: false
@@ -34,3 +34,4 @@ zuul:
       path: /team/**
       serviceId: TEAM-SERVICE
       stripPrefix: false
+
